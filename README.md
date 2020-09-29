@@ -69,3 +69,108 @@ Run:
 ```
 ./main
 ```
+
+## API
+### Base URL
+```
+http://localhost:8080
+```
+
+### Add a URL to Monitor:
+__POST /urls/__
+
+Request:
+```
+{
+    "url":                 "http://www.abc.com",
+    "crawl_timeout":       3,
+    "frequency":           5,
+    "failure_threshold":   3
+}
+```
+Response:
+```
+{
+    "crawl_timeout":       3,
+    "failure_count":       0,
+    "failure_threshold":   3,
+    "frequency":           5,
+    "id":                  "11912758-bbf5-4890-9421-47bcbc7daf40",
+    "status":              "active",
+    "url":                 "http://www.abc.com"
+}
+```
+
+### Get URL Information
+__GET /urls/:id__
+Response:
+```
+{
+    "crawl_timeout":       3,
+    "failure_count":       0,
+    "failure_threshold":   3,
+    "frequency":           5,
+    "id":                  "11912758-bbf5-4890-9421-47bcbc7daf40",
+    "status":              "active",
+    "url":                 "http://www.abc.com"
+}
+```
+
+### Update URL Parameters
+__PATCH /urls/:id__
+
+Request:
+```
+{
+    "crawl_timeout":       1,
+    "frequency":           10,
+    "failure_threshold":   5
+}
+```
+Response:
+```
+{
+    "crawl_timeout":       1,
+    "failure_count":       0,
+    "failure_threshold":   5,
+    "frequency":           10,
+    "id":                  "11912758-bbf5-4890-9421-47bcbc7daf40",
+    "status":              "active",
+    "url":                 "http://www.abc.com"
+}
+```
+
+### Activate URL
+__POST /urls/:id/activate__
+
+Response:
+```
+{
+    "crawl_timeout":       1,
+    "failure_count":       0,
+    "failure_threshold":   5,
+    "frequency":           10,
+    "id":                  "11912758-bbf5-4890-9421-47bcbc7daf40",
+    "status":              "active",
+    "url":                 "http://www.abc.com"
+}
+```
+
+### Deactivate URL
+__POST /urls/:id/deactivate__
+
+Response:
+```
+{
+    "crawl_timeout":       1,
+    "failure_count":       0,
+    "failure_threshold":   5,
+    "frequency":           10,
+    "id":                  "11912758-bbf5-4890-9421-47bcbc7daf40",
+    "status":              "inactive",
+    "url":                 "http://www.abc.com"
+}
+```
+
+### Delete URL
+__DELETE /urls/:id__
