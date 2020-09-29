@@ -20,6 +20,12 @@ Password: rootroot
 ```
 CREATE DATABASE UptimeMonitoringService;
 ```
+
+#### OR
+- Clone this repository.
+- Edit the varialble present in __.env__ file.
+- Then follow the instructions in __2.__ or __3.__ in the __Installation__ section below.
+
 ## Installation
 ### 1. Using Docker, Pulling The Image From Dockerhub
 - Pull the image first from dockerhub by using the following command:
