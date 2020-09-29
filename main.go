@@ -1,18 +1,28 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"github.com/sarthakshekhawat/Uptime-Monitoring-Service/controller"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
+func dsn() string {
+	godotenv.Load(".env")
+	dbHost := os.Getenv("DB_HOST")
+	dbUser := os.Getenv("DB_USER")
+	dbPass := os.Getenv("DB_PASS")
+	dbName := os.Getenv("DB_NAME")
+	return fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?charset=utf8&parseTime=True&loc=Local", dbUser, dbPass, dbHost, dbName)
+}
+
 func init() {
 	//open a db connection
-	// dsn := "root:rootroot@tcp(host.docker.internal:3306)/UptimeMonitoringService?charset=utf8mb4&parseTime=True&loc=Local"
-	dsn := "root:rootroot@tcp(docker.for.mac.localhost:3306)/UptimeMonitoringService?charset=utf8mb4&parseTime=True&loc=Local"
-	// dsn := "root:rootroot@tcp(127.0.0.1:3306)/UptimeMonitoringService?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	db, err := gorm.Open(mysql.Open(dsn()), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}

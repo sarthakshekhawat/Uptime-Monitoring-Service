@@ -8,6 +8,7 @@ require (
 	github.com/gojektech/valkyrie v0.0.0-20190210220504-8f62c1e7ba45 // indirect
 	github.com/golang/mock v1.4.4
 	github.com/google/uuid v1.1.2
+	github.com/joho/godotenv v1.3.0
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/stretchr/testify v1.4.0
 	gorm.io/driver/mysql v1.0.1
