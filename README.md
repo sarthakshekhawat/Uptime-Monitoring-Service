@@ -32,7 +32,7 @@ docker run -p 8080:8080 sarthakshekhawat/uptime-monitoring-service
 ```
 
 ### 2. Using Docker, Without Pulling The Image From Dockerhub
-- Clone this repository and open the "Uptime-Monitoring-Service":
+- Clone this repository and open __Uptime-Monitoring-Service__ directory:
 ```
 cd Uptime-Monitoring-Service
 ```
@@ -46,7 +46,7 @@ docker run -p 8080:8080 uptime-monitoring-service
 ```
 
 ### 3. Without Docker, With Build
-- Clone this repository and open the "Uptime-Monitoring-Service":
+- Clone this repository and open __Uptime-Monitoring-Service__ directory:
 ```
 cd Uptime-Monitoring-Service
 ```
@@ -60,8 +60,8 @@ Run:
 ./Uptime-Monitoring-Service
 ```
 
-### 3. Without Docker, Without Build
-- Clone this repository and open the "Uptime-Monitoring-Service":
+### 4. Without Docker, Without Build
+- Clone this repository and open __Uptime-Monitoring-Service__ directory:
 ```
 cd Uptime-Monitoring-Service
 ```
@@ -101,7 +101,7 @@ Response:
 }
 ```
 
-### Get URL Information
+### Get URL Information:
 __GET /urls/:id__
 Response:
 ```
@@ -116,7 +116,7 @@ Response:
 }
 ```
 
-### Update URL Parameters
+### Update URL Parameters:
 __PATCH /urls/:id__
 
 Request:
@@ -140,7 +140,7 @@ Response:
 }
 ```
 
-### Activate URL
+### Activate URL:
 __POST /urls/:id/activate__
 
 Response:
@@ -156,7 +156,7 @@ Response:
 }
 ```
 
-### Deactivate URL
+### Deactivate URL:
 __POST /urls/:id/deactivate__
 
 Response:
@@ -172,5 +172,5 @@ Response:
 }
 ```
 
-### Delete URL
+### Delete URL:
 __DELETE /urls/:id__
